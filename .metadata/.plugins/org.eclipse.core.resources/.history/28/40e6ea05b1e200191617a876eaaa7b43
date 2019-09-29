@@ -1,0 +1,5 @@
+package com.kush.spring.repository;
+
+public class HibernateCustomerRepositoryImpl {
+
+}
