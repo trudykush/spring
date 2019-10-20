@@ -14,8 +14,14 @@ public class CustomerServiceImpl implements CustomerService {
 	//@Autowired
 	private CustomerRepository customerRepository;
 	
-	
 	@Autowired
+	public CustomerServiceImpl(CustomerRepository customerRepository) {
+		
+		System.out.println("Using Constructor level injection in autowire stereotype");
+		this.customerRepository = customerRepository;
+	}
+	
+	//@Autowired
 	public void setCustomerRepository(CustomerRepository customerRepository) {
 		
 		System.out.println("I am using Setter level injection in autowire");
