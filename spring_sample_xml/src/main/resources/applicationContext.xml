@@ -4,12 +4,13 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-	<bean name="customerRepository" 
+	<bean name="foo" 
 		  class="com.kush.spring.repository.HibernateCustomerRepositoryImpl"/>
 		  
 	<bean name="customerService" 
-		  class="com.kush.spring.service.CustomerServiceImpl">
-		<constructor-arg index="0" ref="customerRepository"/> 
+		  class="com.kush.spring.service.CustomerServiceImpl" 
+		  autowire="byType" scope="singleton">
+		<!-- <constructor-arg index="0" ref="customerRepository"/>  -->
 	</bean>
 
 </beans>
