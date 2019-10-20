@@ -11,9 +11,19 @@ import com.kush.spring.repository.CustomerRepository;
 @Service("customerService")
 public class CustomerServiceImpl implements CustomerService {
 	
-	@Autowired
+	//@Autowired
 	private CustomerRepository customerRepository;
 	
+	
+	@Autowired
+	public void setCustomerRepository(CustomerRepository customerRepository) {
+		
+		System.out.println("I am using Setter level injection in autowire");
+		this.customerRepository = customerRepository;
+	}
+
+
+
 	@Override
 	public List<Customer> findAll() {
 		return customerRepository.findAll();
