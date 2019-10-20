@@ -3,12 +3,14 @@ package com.kush.spring.service;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import com.kush.spring.model.Customer;
 import com.kush.spring.repository.CustomerRepository;
 
 @Service("customerService")
+@Scope("singleton")
 public class CustomerServiceImpl implements CustomerService {
 
 
