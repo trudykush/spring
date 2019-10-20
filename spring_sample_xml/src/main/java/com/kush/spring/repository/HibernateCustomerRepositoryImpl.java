@@ -3,10 +3,13 @@ package com.kush.spring.repository;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Value;
+
 import com.kush.spring.model.Customer;
 
 public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 
+	@Value("${dbUsername}")
 	private String dbUsername;
 
 	@Override
@@ -26,8 +29,9 @@ public class HibernateCustomerRepositoryImpl implements CustomerRepository {
 		return customersList;
 	}
 
-	public void setDbUsername(String dbUsername) {
-		this.dbUsername = dbUsername;
-	}
+	/*
+	 * public void setDbUsername(String dbUsername) { this.dbUsername = dbUsername;
+	 * }
+	 */
 
 }
